@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale = 1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{  url_for('main_controller.home_func') }}">Home</a> </li>
+            <li><a href="{{ url_for('main_controller.graphs_func') }}">Graphs</a></li>
+            <li><a href="{{ url_for('main_controller.live_func') }}">Live</a></li>
+            <li><a href="{{ url_for('main_controller.notifications_func') }}">Notifications</a></li>
+            <li><a href="{{ url_for('main_controller.settings_func') }}">Settings</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% block content %}{%  endblock %}
+    </div>
+</body>
+</html>
