@@ -108,6 +108,17 @@ Greenify is an innovative soil moisture monitoring system designed to optimize p
 Project Demo can be found here:
 https://www.youtube.com/watch?v=yU7lL_g5PbA
 ---
+## **Screenshots of web application**
+1. Home Page
+   ![image](https://github.com/user-attachments/assets/8546d9c1-688e-48c0-8dc0-8b29779f494c)
+
+2. Graphs Page
+   ![image](https://github.com/user-attachments/assets/a549cf9a-f0c5-4356-9508-b8bc1faadf5d)
+
+3. Settings Page
+   ![image](https://github.com/user-attachments/assets/919214e1-c019-4d21-959c-02eb0706d64e)
+
+---
 
 ## **Acknowledgments**
 Special thanks to Professor Haikel Hichri for guiding us through the IoT 2 course and enabling this project.
