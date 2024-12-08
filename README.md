@@ -7,7 +7,7 @@
 
 ---
 
-## **Project Overview**
+## **Project Abstract**
 Greenify is an innovative soil moisture monitoring system designed to optimize plant health by providing real-time data, notifications, and historical insights. This project integrates hardware and software solutions to create an efficient and user-friendly experience for monitoring soil conditions.
 
 ---
