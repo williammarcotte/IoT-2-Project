@@ -104,8 +104,9 @@ Greenify is an innovative soil moisture monitoring system designed to optimize p
 4. **Run the Project**:
    - Start the MQTT subscriber on the Raspberry Pi.
    - Access the web app at `http://<your-server-ip>:5000`.
-
-
+---
+Project Demo can be found here:
+https://www.youtube.com/watch?v=yU7lL_g5PbA
 ---
 
 ## **Acknowledgments**
