@@ -1,4 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-{%  endblock %}
+<h1>Notifications</h1>
+<p id="notification-message">Checking...</p>
+
+<script>
+    const eventSource = new EventSource('/stream');
+    eventSource.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+        let message;
+
+        if (data.humidity_percentage === null) {
+            message = "No data error!";
+        } else if (data.humidity_percentage < 40) {
+            message = "Water humidity critically low!";
+        } else {
+            message = "Humidity levels are fine.";
+        }
+
+        document.getElementById('notification-message').textContent = message;
+    };
+</script>
+{% endblock %}

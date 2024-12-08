@@ -1,4 +1,61 @@
 {% extends "base.html" %}
 
 {% block content %}
-{%  endblock %}
+<h1>Humidity Over Time</h1>
+<canvas id="humidityChart" width="400" height="200"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // fetch dataI
+    async function fetchHumidityData() {
+        try {
+            const response = await fetch('/api/humidity_data');
+            const data = await response.json();
+
+            if (data.error) {
+                console.error("Error fetching data:", data.error);
+                return;
+            }
+
+            // make chart
+            const ctx = document.getElementById('humidityChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.timestamps,
+                    datasets: [{
+                        label: 'Humidity Percentage',
+                        data: data.humidity,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: true },
+                        tooltip: { enabled: true }
+                    },
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'Time' }
+                        },
+                        y: {
+                            title: { display: true, text: 'Humidity Percentage (%)' },
+                            min: 0,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        } catch (error) {
+            console.error("Error rendering the graph:", error);
+        }
+    }
+
+    fetchHumidityData();
+</script>
+{% endblock %}
+ %}

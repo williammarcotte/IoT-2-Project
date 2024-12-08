@@ -1,4 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-{%  endblock %}
+<h1>Live Sensor Data</h1>
+<p>Current Humidity: <span id="humidity-percentage">Loading...</span>%</p>
+
+<script>
+    const eventSource = new EventSource('/stream');
+    eventSource.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+        const humidity = data.humidity_percentage !== null ? data.humidity_percentage : "No Data";
+        document.getElementById('humidity-percentage').textContent = humidity;
+    };
+</script>
+{% endblock %}
