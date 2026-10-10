@@ -8,8 +8,7 @@
 ---
 
 ## **Project Abstract**
-Greenify is an innovative soil moisture monitoring system designed to optimize plant health by providing real-time data, notifications, and historical insights. This project integrates hardware and software solutions to create an efficient and user-friendly experience for monitoring soil conditions.
-
+Greenify is an IoT soil moisture monitoring prototype developed as a course project. It provides live sensor readings, historical charts, and configurable low-moisture alerts through a web dashboard. The system uses MQTT for communication, SQLite to buffer readings locally during connection outages, and MongoDB to store historical data once connectivity is restored.
 ---
 
 ## **Features**
